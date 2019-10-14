@@ -1,0 +1,8 @@
+{
+  "body": "{\"content\":\"Test Todo\",\"dueDays\":\"null\",\"dueTime\":\"null\",\"weekly\":\"[false,true,true,true,true,true,false]\",\"activeState\":\"active\"}",
+  "requestContext": {
+    "identity": {
+      "cognitoIdentityId": "USER-SUB-99999"
+    }
+  }
+}

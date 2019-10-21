@@ -10,6 +10,7 @@ export async function main(event, context) {
       userId: event.requestContext.identity.cognitoIdentityId,
       todoId: uuid.v1(),
       content: data.content,
+      attachment: data.attachment,
       dueDays: data.dueDays,
       dueTime: data.dueTime,
       weekly: data.weekly,

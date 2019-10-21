@@ -93,7 +93,7 @@ functions:
     handler: delete.main
     events:
       - http:
-          path: notes/{id}
+          path: todos/{id}
           method: delete
           cors: true
           authorizer: aws_iam

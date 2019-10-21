@@ -10,11 +10,9 @@ export async function main(event, context) {
     // - 'noteId': path parameter
     Key: {
       userId: event.requestContext.identity.cognitoIdentityId,
-      todoId: event.pathParameters.id
+      todoId: event.pathParameters.id,
     }
   };
-
-  console.warn(params);
 
   try {
     const result = await dynamoDbLib.call("get", params);

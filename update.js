@@ -14,18 +14,20 @@ export async function main(event, context) {
     },
     // 'UpdateExpression' defines the attributes to be updated
     // 'ExpressionAttributeValues' defines the value in the update expression
-    UpdateExpression: "SET content = :content, activeState = :activeState",
+    UpdateExpression: "SET content = :content, activeState = :activeState, attachment = :attachment, dueDays = :dueDays, dueTime = :dueTime, weekly = :weekly",
     ExpressionAttributeValues: {
+      ":content": data.content || null,
       ":activeState": data.activeState || null,
-      ":content": data.content || null
+      ":attachment": data.attachment || null,
+      ":dueDays": data.dueDays || null,
+      ":dueTime": data.dueTime || null,
+      ":weekly": data.weekly || []
     },
     // 'ReturnValues' specifies if and how to return the item's attributes,
     // where ALL_NEW returns all attributes of the item after the update; you
     // can inspect 'result' below to see how it works with different settings
     ReturnValues: "ALL_NEW"
   };
-
-  console.warn(params);
 
   try {
     await dynamoDbLib.call("update", params);
